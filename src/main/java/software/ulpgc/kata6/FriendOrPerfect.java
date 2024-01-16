@@ -4,11 +4,11 @@ import java.util.stream.IntStream;
 public class FriendOrPerfect {
     public String find(int number) {
 
-        int potentialFriend = IntStream.range(1, number)
+        int potentialFriend = IntStream.rangeClosed(1, number/2)
                 .filter(num -> isDivisor(number, num))
                 .sum();
 
-        int checkFriend = IntStream.range(1, potentialFriend)
+        int checkFriend = IntStream.rangeClosed(1, potentialFriend/2)
                 .filter(num -> isDivisor(potentialFriend, num))
                 .sum();
 
